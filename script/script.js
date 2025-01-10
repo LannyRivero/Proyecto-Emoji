@@ -1,24 +1,26 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-    let lastClickedCard = null; 
-
-    
-    cards.forEach((card) => {
-        card.addEventListener('click', () => {
-            if (lastClickedCard) {              
-                
-                lastClickedCard.style.visibility = 'visible';
-                lastClickedCard.style.opacity = '1';
+function addHoverAndClickActions(elements) {
+    elements.forEach((element) => {
+        let isHidden = false;
+        
+        element.addEventListener('mouseenter', () => {
+            if (!isHidden) {
+                element.classList.add('fade-out');  
+                isHidden = true;  
             }
-
-            if (card.style.visibility !== 'hidden') {
-                card.style.visibility = 'hidden';
-                card.style.opacity = '0';
-            }
-
-            
-            lastClickedCard = card;
         });
-    });      
+        
+        element.addEventListener('click', (event) => {
+            if (isHidden) {
+                element.classList.remove('fade-out'); 
+                isHidden = false; 
+                event.stopPropagation(); 
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const containerItems = document.querySelectorAll('.card'); 
+    addHoverAndClickActions(containerItems);  
 });

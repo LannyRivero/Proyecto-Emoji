@@ -37,17 +37,11 @@ body {
     margin: 0;
     text-align: center;
     letter-spacing: 0.5px;
-    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* La visibilidad cambia inmediatamente, pero con un retraso en la opacidad */
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s; 
 }
-.grid-card.container-card.with-emoji {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.card[style*="visibility: hidden"] {
-    /* Si la tarjeta está oculta, permanece en su lugar pero se hace invisible */
-    position: relative; /* Asegura que mantenga su lugar en el flujo del layout */
-    opacity: 0; /* La hace completamente invisible */
+
+.card.fade-out {
+    opacity: 0; 
 }
 
 .emoji{
