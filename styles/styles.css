@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 5px;  
+    flex-wrap: wrap;
+    max-width: 1200px; 
+    justify-content: center;
+}
+
+.card{
+    width: 250px; 
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+    padding: 4px;
+    flex-direction: column;
+}
+.grid-card h2{
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s; /* La visibilidad cambia inmediatamente, pero con un retraso en la opacidad */
+}
+.grid-card.container-card.with-emoji {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.card[style*="visibility: hidden"] {
+    /* Si la tarjeta está oculta, permanece en su lugar pero se hace invisible */
+    position: relative; /* Asegura que mantenga su lugar en el flujo del layout */
+    opacity: 0; /* La hace completamente invisible */
+}
+
+.emoji{
+    font-size: 32px;
+}
+
+.yellow {
+    background-color: #f3d57c;
+}
+.blue {
+    background-color: #6ac8f7;
+}
+
+.red {
+    background-color: #fa8f8f;
+}
+
+.green {
+    background-color: #82faca;
+}
