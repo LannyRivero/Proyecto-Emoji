@@ -9,17 +9,17 @@ body {
     padding: 20px;
 }
 
-.grid{
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 5px;  
+    gap: 5px;
     flex-wrap: wrap;
-    max-width: 1200px; 
+    max-width: 1200px;
     justify-content: center;
 }
 
-.card{
-    width: 250px; 
+.card {
+    width: 250px;
     height: 120px;
     display: flex;
     justify-content: center;
@@ -29,7 +29,8 @@ body {
     padding: 4px;
     flex-direction: column;
 }
-.grid-card h2{
+
+.grid-card h2 {
     color: white;
     font-size: 12px;
     font-weight: 500;
@@ -37,20 +38,21 @@ body {
     margin: 0;
     text-align: center;
     letter-spacing: 0.5px;
-    transition: opacity 0.5s ease, visibility 0s linear 0.5s; 
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
 }
 
 .card.fade-out {
-    opacity: 0; 
+    opacity: 0;
 }
 
-.emoji{
+.emoji {
     font-size: 32px;
 }
 
 .yellow {
     background-color: #f3d57c;
 }
+
 .blue {
     background-color: #6ac8f7;
 }
